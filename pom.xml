@@ -5,14 +5,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.10</version>
+        <version>3.3.4</version>
         <relativePath/>
     </parent>
     <groupId>com.cuscatlan</groupId>
     <artifactId>products</artifactId>
     <version>1.0.0</version>
     <name>products</name>
-    <description>Microservice for productDto management</description>
+    <description>Microservice for products management</description>
     <url/>
     <licenses>
         <license/>
@@ -53,6 +53,11 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>4.0.0</version>
         </dependency>
     </dependencies>
 
