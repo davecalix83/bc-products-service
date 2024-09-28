@@ -13,7 +13,18 @@ import java.util.List;
  */
 public interface ProductService {
 
+    /**
+     * Retrieves all products.
+     *
+     * @return a list of ProductDto objects representing all available products.
+     */
     List<ProductDto> getAllProducts();
 
+    /**
+     * Retrieves a product by its unique ID.
+     *
+     * @param id the unique identifier of the product to retrieve
+     * @return a ProductDto object representing the requested product, or null if not found.
+     */
     ProductDto getProductById(Long id);
 }
