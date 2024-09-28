@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * REST controller responsible for handling product-related endpoints. Follows
- * the principles of Clean Code and SOLID.
+ * REST controller responsible for handling product-related endpoints. 
+ * This controller provides methods to retrieve product information
+ * and follows the principles of Clean Code and SOLID design principles.
  */
 @RestController
 @RequiredArgsConstructor
@@ -21,12 +22,25 @@ public class ProductController {
 
     private final ProductService productService;
 
+    /**
+     * Retrieves all products from the product service.
+     *
+     * @return a ResponseEntity containing a list of ProductDto objects
+     *         representing all products.
+     */
     @GetMapping
     public ResponseEntity<List<ProductDto>> getAllProducts() {
         List<ProductDto> products = productService.getAllProducts();
         return ResponseEntity.ok(products);
     }
 
+    /**
+     * Retrieves a product by its ID.
+     *
+     * @param id the ID of the product to retrieve
+     * @return a ResponseEntity containing the ProductDto object
+     *         representing the requested product, or a 404 status if not found.
+     */
     @GetMapping("/{id}")
     public ResponseEntity<ProductDto> getProductById(@PathVariable Long id) {
         ProductDto product = productService.getProductById(id);
